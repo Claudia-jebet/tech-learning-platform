@@ -15,3 +15,8 @@ A web-based platform for learning tech skills including web development, Python,
 - HTML5
 - CSS3
 - JavaScript
+## Live Demo
+Coming soon.
+
+## Author
+Claudia Jebet

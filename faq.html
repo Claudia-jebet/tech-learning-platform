@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — TechLearn</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-question { padding: 1.1rem 1.25rem; font-weight: 600; font-size: 0.95rem; font-family: 'Space Grotesk', sans-serif; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+    .faq-question:hover { background: var(--primary-light); }
+    .faq-answer { padding: 1rem 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; border-top: 1px solid var(--border); display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-question { background: var(--primary-light); color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tech<span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-label">FAQ</span>
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about TechLearn. Can't find an answer? Contact us.</p>
+  </div>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="container" style="max-width:750px;">
+
+      <span class="section-label">General</span>
+      <h2 class="section-title" style="font-size:1.5rem;margin-top:0.5rem;">About TechLearn</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">What is TechLearn? <span>+</span></div>
+        <div class="faq-answer">TechLearn is a free online platform that offers structured tech courses for beginners and intermediate learners. We cover web development, Python, data science, cybersecurity, and more.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is TechLearn really free? <span>+</span></div>
+        <div class="faq-answer">Yes — all core course content is completely free. No credit card, no hidden fees. We may offer optional premium features in future, but learning will always be free.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Who is TechLearn for? <span>+</span></div>
+        <div class="faq-answer">TechLearn is for anyone who wants to learn tech skills — whether you're a complete beginner, a student, or a professional looking to upskill. Our courses are designed to be accessible to everyone.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need prior experience to start? <span>+</span></div>
+        <div class="faq-answer">Not at all! Most of our courses start from absolute zero. We have beginner tracks specifically designed for people with no coding experience whatsoever.</div>
+      </div>
+
+      <span class="section-label" style="margin-top:2rem;display:inline-block;">Courses</span>
+      <h2 class="section-title" style="font-size:1.5rem;margin-top:0.5rem;">Learning on TechLearn</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">How long does each course take? <span>+</span></div>
+        <div class="faq-answer">It depends on the course. Our shortest courses are around 8 hours and the longest are 32+ hours. You can go at your own pace — there are no deadlines.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I access courses on my phone? <span>+</span></div>
+        <div class="faq-answer">Yes! TechLearn is mobile-friendly. However for coding courses, we recommend using a laptop or desktop so you can practice writing code alongside the lessons.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I get a certificate when I finish? <span>+</span></div>
+        <div class="faq-answer">Yes — you earn a certificate of completion for every course you finish. You can download and share it on LinkedIn or add it to your CV.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I suggest a new course topic? <span>+</span></div>
+        <div class="faq-answer">Absolutely! We love hearing from our community. Use the Contact page to send us your suggestion and we'll consider it for our next content sprint.</div>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;padding:2rem;background:var(--primary-light);border-radius:var(--radius);">
+        <h3 style="margin-bottom:0.5rem;">Still have questions?</h3>
+        <p style="color:var(--text-muted);margin-bottom:1.25rem;font-size:0.95rem;">We're happy to help. Reach out and we'll get back to you within 24 hours.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo">Tech<span>Learn</span></div><p>A free, structured platform helping African students and professionals break into tech — one skill at a time.</p></div>
+      <div class="footer-col"><h4>Learn</h4><a href="courses.html">All Courses</a><a href="courses.html">Web Development</a><a href="courses.html">Python</a><a href="courses.html">Data Science</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TechLearn. All rights reserved.</span><span>Built with ❤️ for African learners</span></div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('open');
+        q.querySelector('span').textContent = item.classList.contains('open') ? '−' : '+';
+      });
+    });
+  </script>
+
+</body>
+</html>
