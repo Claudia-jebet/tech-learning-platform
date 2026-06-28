@@ -22,3 +22,10 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('TechLearn loaded successfully!');
+// Update footer year automatically
+const yearEl = document.querySelector('.footer-bottom span');
+if (yearEl) {
+  const year = new Date().getFullYear();
+  yearEl.textContent = `© ${year} TechLearn. All rights reserved.`;
+}
+
