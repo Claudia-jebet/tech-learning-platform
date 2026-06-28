@@ -20,3 +20,5 @@ Coming soon.
 
 ## Author
 Claudia Jebet
+## Project Status
+Active development - v1.0
