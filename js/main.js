@@ -48,4 +48,10 @@ window.addEventListener('scroll', () => {
 scrollBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+// Page load fade in
+document.body.style.opacity = '0';
+document.body.style.transition = 'opacity 0.3s ease';
+window.addEventListener('load', () => {
+  document.body.style.opacity = '1';
+});
 
