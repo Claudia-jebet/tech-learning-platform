@@ -35,4 +35,17 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     link.classList.add('active');
   }
 });
+// Scroll to top button
+const scrollBtn = document.createElement('button');
+scrollBtn.textContent = '↑';
+scrollBtn.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#4F6EF7;color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer;display:none;z-index:999;';
+document.body.appendChild(scrollBtn);
+
+window.addEventListener('scroll', () => {
+  scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
