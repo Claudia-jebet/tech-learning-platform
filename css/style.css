@@ -163,10 +163,7 @@ ul {
   color: #fff;
 }
 
-.btn-accent:hover {
-  background: #00a88d;
-  transform: translateY(-1px);
-}
+.btn-accent:hover { background: #00b896; transform: translateY(-1px); box-shadow: var(--shadow-hover); }
 
 /* ===== SECTION LAYOUT ===== */
 .section {
