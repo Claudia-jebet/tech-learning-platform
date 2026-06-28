@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Fundamentals — TechLearn</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .course-hero { background: linear-gradient(135deg, var(--primary-light) 0%, #fff 100%); padding: 4rem 2rem; border-bottom: 1px solid var(--border); }
+    .course-hero-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: center; }
+    .breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--primary); }
+    .course-hero h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .course-hero p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .course-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .course-quick-info { display: flex; gap: 1.5rem; font-size: 0.875rem; color: var(--text-muted); flex-wrap: wrap; }
+    .enroll-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-hover); padding: 1.75rem; text-align: center; }
+    .enroll-card .price { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem; }
+    .enroll-card .price-note { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .enroll-card .btn { width: 100%; justify-content: center; margin-bottom: 0.75rem; }
+    .enroll-includes { text-align: left; margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .enroll-includes h4 { font-size: 0.85rem; margin-bottom: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .enroll-includes li { font-size: 0.875rem; color: var(--text); padding: 0.3rem 0; display: flex; align-items: center; gap: 0.5rem; }
+    .enroll-includes li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+    .course-body-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; }
+    .what-you-learn { background: var(--primary-light); border: 1px solid rgba(79,110,247,0.2); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 2rem; }
+    .what-you-learn h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .learn-item { font-size: 0.875rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .learn-item::before { content: '✓'; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+    .curriculum h3 { font-size: 1.2rem; margin-bottom: 1.25rem; }
+    .module { border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 0.75rem; overflow: hidden; }
+    .module-header { background: var(--bg); padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; font-family: 'Space Grotesk', sans-serif; }
+    .module-lessons { padding: 0.75rem 1.25rem; border-top: 1px solid var(--border); }
+    .lesson-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; font-size: 0.875rem; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+    .lesson-item:last-child { border-bottom: none; }
+    .lesson-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+    .sidebar-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: var(--shadow); }
+    .sidebar-card h4 { font-size: 1rem; margin-bottom: 1rem; }
+    .instructor-info { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.75rem; }
+    .instructor-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+    .instructor-info strong { display: block; font-size: 0.9rem; }
+    .instructor-info span { font-size: 0.8rem; color: var(--text-muted); }
+    .instructor-bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    @media (max-width: 768px) { .course-hero-grid, .course-body-grid { grid-template-columns: 1fr; } .learn-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tech<span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <div class="course-hero">
+    <div class="course-hero-grid">
+      <div>
+        <div class="breadcrumb"><a href="courses.html">Courses</a> › Web Development</div>
+        <h1>Web Development Fundamentals</h1>
+        <p>Go from complete beginner to confident web developer. You'll learn HTML, CSS, and JavaScript — and finish with a real portfolio project you built yourself.</p>
+        <div class="course-tags">
+          <span class="badge badge-blue">Beginner</span>
+          <span class="badge badge-green">Web Development</span>
+          <span class="badge badge-orange">HTML · CSS · JavaScript</span>
+        </div>
+        <div class="course-quick-info">
+          <span>⏱ 24 hours</span>
+          <span>📚 8 modules</span>
+          <span>👤 3,200 learners</span>
+          <span>⭐ 4.9 rating</span>
+          <span>🔄 Updated June 2026</span>
+        </div>
+      </div>
+      <div class="enroll-card">
+        <div class="price">FREE</div>
+        <div class="price-note">No credit card required</div>
+        <a href="#" class="btn btn-primary">Enroll Now</a>
+        <a href="#" class="btn btn-outline">Preview Course</a>
+        <div class="enroll-includes">
+          <h4>This course includes</h4>
+          <ul>
+            <li>24 hours of content</li>
+            <li>8 hands-on projects</li>
+            <li>Downloadable resources</li>
+            <li>Community forum access</li>
+            <li>Certificate of completion</li>
+            <li>Lifetime access</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="course-body-grid">
+      <div>
+        <div class="what-you-learn">
+          <h3>What You'll Learn</h3>
+          <div class="learn-grid">
+            <div class="learn-item">Structure web pages with HTML5</div>
+            <div class="learn-item">Style layouts with CSS3</div>
+            <div class="learn-item">Make pages responsive for mobile</div>
+            <div class="learn-item">Add interactivity with JavaScript</div>
+            <div class="learn-item">Use Flexbox and CSS Grid</div>
+            <div class="learn-item">Work with the DOM</div>
+            <div class="learn-item">Handle events and user input</div>
+            <div class="learn-item">Deploy a site to the web</div>
+          </div>
+        </div>
+        <div class="curriculum">
+          <h3>Course Curriculum</h3>
+          <div class="module">
+            <div class="module-header"><span>Module 1: Introduction to the Web</span><span style="font-size:0.8rem;color:var(--text-muted);">3 lessons · 1.5 hrs</span></div>
+            <div class="module-lessons">
+              <div class="lesson-item"><div class="lesson-icon">▶</div>How the internet works</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Browsers, servers, and clients</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Setting up your development environment</div>
+            </div>
+          </div>
+          <div class="module">
+            <div class="module-header"><span>Module 2: HTML Foundations</span><span style="font-size:0.8rem;color:var(--text-muted);">5 lessons · 3 hrs</span></div>
+            <div class="module-lessons">
+              <div class="lesson-item"><div class="lesson-icon">▶</div>HTML document structure</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Tags, elements, and attributes</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Forms and inputs</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Semantic HTML5</div>
+              <div class="lesson-item"><div class="lesson-icon">🛠</div>Project: Build your first webpage</div>
+            </div>
+          </div>
+          <div class="module">
+            <div class="module-header"><span>Module 3: CSS Styling</span><span style="font-size:0.8rem;color:var(--text-muted);">6 lessons · 4 hrs</span></div>
+            <div class="module-lessons">
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Selectors, properties, and values</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>The box model</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Typography and colors</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Flexbox layouts</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>CSS Grid</div>
+              <div class="lesson-item"><div class="lesson-icon">🛠</div>Project: Style a landing page</div>
+            </div>
+          </div>
+          <div class="module">
+            <div class="module-header"><span>Module 4: Responsive Design</span><span style="font-size:0.8rem;color:var(--text-muted);">4 lessons · 2.5 hrs</span></div>
+            <div class="module-lessons">
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Media queries</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Mobile-first approach</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Responsive images</div>
+              <div class="lesson-item"><div class="lesson-icon">🛠</div>Project: Make your page mobile-friendly</div>
+            </div>
+          </div>
+          <div class="module">
+            <div class="module-header"><span>Module 5–8: JavaScript &amp; Final Project</span><span style="font-size:0.8rem;color:var(--text-muted);">13 lessons · 13 hrs</span></div>
+            <div class="module-lessons">
+              <div class="lesson-item"><div class="lesson-icon">▶</div>JavaScript fundamentals</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>DOM manipulation</div>
+              <div class="lesson-item"><div class="lesson-icon">▶</div>Events and interactivity</div>
+              <div class="lesson-item"><div class="lesson-icon">🛠</div>Final Project: Full personal portfolio site</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-card">
+          <h4>Your Instructor</h4>
+          <div class="instructor-info">
+            <div class="instructor-avatar">AK</div>
+            <div><strong>Aisha Kamau</strong><span>Head of Curriculum, TechLearn</span></div>
+          </div>
+          <p class="instructor-bio">Former CS lecturer with 6+ years of experience teaching web development. Designed this course to be the one she wishes she had when starting out.</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Requirements</h4>
+          <ul style="font-size:0.875rem;color:var(--text-muted);line-height:2;">
+            <li>✅ A computer with internet access</li>
+            <li>✅ A text editor (VS Code recommended)</li>
+            <li>✅ No prior coding experience needed</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h4>Share This Course</h4>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+            <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">Twitter</a>
+            <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">LinkedIn</a>
+            <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo">Tech<span>Learn</span></div><p>A free, structured platform helping African students and professionals break into tech — one skill at a time.</p></div>
+      <div class="footer-col"><h4>Learn</h4><a href="courses.html">All Courses</a><a href="courses.html">Web Development</a><a href="courses.html">Python</a><a href="courses.html">Data Science</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TechLearn. All rights reserved.</span><span>Built with ❤️ for African learners</span></div>
+  </footer>
+
+</body>
+</html>

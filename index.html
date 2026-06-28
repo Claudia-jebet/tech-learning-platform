@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechLearn — Learn to Code, Build the Future</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #F0F3FF 0%, #E8FDF9 100%);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(79,110,247,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,201,167,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid rgba(79,110,247,0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 .highlight { color: var(--primary); position: relative; }
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 0;
+      width: 100%; height: 6px;
+      background: var(--accent);
+      opacity: 0.3;
+      border-radius: 3px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(79,110,247,0.15);
+    }
+    .stat { text-align: center; }
+    .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary); display: block; }
+    .stat-label { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .course-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); transition: all 0.25s; }
+    .course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+    .course-thumb { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .thumb-blue { background: linear-gradient(135deg, #EEF1FE, #D4DDFC); }
+    .thumb-green { background: linear-gradient(135deg, #E0FAF5, #B2F0E5); }
+    .thumb-orange { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+    .thumb-purple { background: linear-gradient(135deg, #F3E8FF, #E0C3FC); }
+    .thumb-red { background: linear-gradient(135deg, #FEE2E2, #FECACA); }
+    .thumb-teal { background: linear-gradient(135deg, #E0FEFE, #B2EFEF); }
+    .course-body { padding: 1.25rem; }
+    .course-body h3 { font-size: 1rem; margin: 0.5rem 0 0.4rem; }
+    .course-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem; }
+    .course-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .feature-card { padding: 1.75rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg); transition: all 0.2s; }
+    .feature-card:hover { border-color: var(--primary); background: var(--primary-light); }
+    .feature-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .feature-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .feature-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; text-align: center; padding: 5rem 2rem; }
+    .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+    .cta-section p { font-size: 1.1rem; opacity: 0.85; max-width: 500px; margin: 0 auto 2.5rem; }
+    .btn-white { background: #fff; color: var(--primary); font-family: 'Space Grotesk', sans-serif; font-weight: 700; padding: 0.85rem 2rem; border-radius: var(--radius-sm); font-size: 1rem; display: inline-block; transition: all 0.2s; }
+    .btn-white:hover { background: var(--primary-light); transform: translateY(-2px); }
+    .testimonial-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.75rem; box-shadow: var(--shadow); }
+    .testimonial-text { font-size: 0.95rem; color: var(--text); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .author-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; color: #fff; }
+    .avatar-blue { background: var(--primary); }
+    .avatar-green { background: var(--accent); }
+    .avatar-purple { background: #8B5CF6; }
+    .author-info strong { display: block; font-size: 0.9rem; font-family: 'Space Grotesk', sans-serif; }
+    .author-info span { font-size: 0.8rem; color: var(--text-muted); }
+    .stars { color: #F59E0B; font-size: 0.85rem; margin-bottom: 0.75rem; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .stat-number { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tech<span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow"><span class="dot"></span> Free courses available — start learning today</div>
+    <h1>Learn to <span class="highlight">Code</span> &amp; Build the Future</h1>
+    <p>TechLearn offers structured, beginner-friendly tech courses taught by industry experts. Go from zero to job-ready — at your own pace.</p>
+    <div class="hero-buttons">
+      <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+      <a href="about.html" class="btn btn-outline">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-number">12,000+</span><span class="stat-label">Active Learners</span></div>
+      <div class="stat"><span class="stat-number">80+</span><span class="stat-label">Courses</span></div>
+      <div class="stat"><span class="stat-number">95%</span><span class="stat-label">Completion Rate</span></div>
+      <div class="stat"><span class="stat-number">Free</span><span class="stat-label">To Get Started</span></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <span class="section-label">Popular Courses</span>
+      <h2 class="section-title">Start with What Interests You</h2>
+      <p class="section-subtitle">From web development to data science — we have a learning path for every goal.</p>
+      <div class="grid-3">
+        <div class="course-card">
+          <div class="course-thumb thumb-blue">💻</div>
+          <div class="course-body">
+            <span class="badge badge-blue">Beginner</span>
+            <h3>Web Development Fundamentals</h3>
+            <p>Learn HTML, CSS, and JavaScript from the ground up. Build real websites by the end of week 2.</p>
+            <div class="course-meta"><span>⏱ 24 hours</span><span>👤 3,200 learners</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-green">🐍</div>
+          <div class="course-body">
+            <span class="badge badge-green">Beginner</span>
+            <h3>Python for Beginners</h3>
+            <p>The most beginner-friendly programming language. Covers data types, loops, functions, and projects.</p>
+            <div class="course-meta"><span>⏱ 18 hours</span><span>👤 5,100 learners</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-orange">📊</div>
+          <div class="course-body">
+            <span class="badge badge-orange">Intermediate</span>
+            <h3>Data Science Essentials</h3>
+            <p>Understand data analysis, visualization, and machine learning concepts with Python and pandas.</p>
+            <div class="course-meta"><span>⏱ 32 hours</span><span>👤 2,400 learners</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-purple">☕</div>
+          <div class="course-body">
+            <span class="badge badge-blue">Intermediate</span>
+            <h3>Java &amp; OOP Concepts</h3>
+            <p>Master object-oriented programming with Java. Covers classes, inheritance, polymorphism, and more.</p>
+            <div class="course-meta"><span>⏱ 28 hours</span><span>👤 1,800 learners</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-red">🗄️</div>
+          <div class="course-body">
+            <span class="badge badge-orange">Intermediate</span>
+            <h3>Databases &amp; SQL</h3>
+            <p>Design and query relational databases. Work with MySQL, PostgreSQL, and real-world datasets.</p>
+            <div class="course-meta"><span>⏱ 20 hours</span><span>👤 2,900 learners</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-teal">🔐</div>
+          <div class="course-body">
+            <span class="badge badge-green">Beginner</span>
+            <h3>Cybersecurity Basics</h3>
+            <p>Understand threats, vulnerabilities, and how to protect systems and data in the modern world.</p>
+            <div class="course-meta"><span>⏱ 16 hours</span><span>👤 1,500 learners</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="courses.html" class="btn btn-outline">View All Courses →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);">
+    <div class="container">
+      <span class="section-label">Why TechLearn</span>
+      <h2 class="section-title">Everything You Need to Succeed</h2>
+      <p class="section-subtitle">We built TechLearn the way we wished we had learned — structured, practical, and community-driven.</p>
+      <div class="grid-3">
+        <div class="feature-card"><span class="feature-icon">🎯</span><h3>Structured Learning Paths</h3><p>No more random YouTube rabbit holes. Each course is carefully sequenced so you build knowledge step by step.</p></div>
+        <div class="feature-card"><span class="feature-icon">🛠️</span><h3>Hands-On Projects</h3><p>Every course ends with a real project you can add to your portfolio. You learn by doing, not just watching.</p></div>
+        <div class="feature-card"><span class="feature-icon">👥</span><h3>Active Community</h3><p>Join a community of learners. Ask questions, share progress, and get feedback from peers and mentors.</p></div>
+        <div class="feature-card"><span class="feature-icon">📱</span><h3>Learn Anywhere</h3><p>Access all content on any device — phone, tablet, or desktop. Your progress syncs across everything.</p></div>
+        <div class="feature-card"><span class="feature-icon">🏆</span><h3>Certificates of Completion</h3><p>Earn shareable certificates when you finish a course. Add them to your CV or LinkedIn profile.</p></div>
+        <div class="feature-card"><span class="feature-icon">🔄</span><h3>Always Up to Date</h3><p>Tech changes fast. Our content is regularly updated to reflect current tools, frameworks, and best practices.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <span class="section-label">Student Stories</span>
+      <h2 class="section-title">Learners Who Made the Leap</h2>
+      <p class="section-subtitle">Real people, real results. Here's what our community says about TechLearn.</p>
+      <div class="grid-3">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"I had zero coding experience. After 3 months on TechLearn, I built my first full website and got an internship. The structure made all the difference."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-blue">A</div>
+            <div class="author-info"><strong>Amina Wanjiku</strong><span>Web Dev student, Nairobi</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The Python course is the best I've found online — clear explanations, great examples. I finished it in 2 weeks and immediately started a data project."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-green">K</div>
+            <div class="author-info"><strong>Kelvin Omondi</strong><span>Data Science learner, Kisumu</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"TechLearn doesn't baby you — it teaches you to think like a developer. The projects are challenging but that's exactly what prepared me for the real world."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-purple">F</div>
+            <div class="author-info"><strong>Faith Muthoni</strong><span>Junior Developer, Mombasa</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Start Learning?</h2>
+    <p>Join thousands of learners already building their tech careers on TechLearn. It's free to get started.</p>
+    <a href="courses.html" class="btn-white">Browse Courses →</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Tech<span>Learn</span></div>
+        <p>A free, structured platform helping African students and professionals break into tech — one skill at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="courses.html">All Courses</a>
+        <a href="courses.html">Web Development</a>
+        <a href="courses.html">Python</a>
+        <a href="courses.html">Data Science</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TechLearn. All rights reserved.</span>
+      <span>Built with ❤️ for African learners</span>
+    </div>
+  </footer>
+
+</body>
+</html>

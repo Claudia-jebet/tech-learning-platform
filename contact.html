@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TechLearn</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start; }
+    .contact-info h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .contact-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem; }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; }
+    .contact-icon { width: 44px; height: 44px; background: var(--primary-light); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .contact-item strong { display: block; font-size: 0.875rem; font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.1rem; }
+    .contact-item span { font-size: 0.875rem; color: var(--text-muted); }
+    .contact-form-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 2rem; box-shadow: var(--shadow); }
+    .contact-form-card h3 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); font-family: 'Space Grotesk', sans-serif; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,110,247,0.12); background: #fff; }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-question { padding: 1.1rem 1.25rem; font-weight: 600; font-size: 0.95rem; font-family: 'Space Grotesk', sans-serif; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+    .faq-question:hover { background: var(--primary-light); }
+    .faq-answer { padding: 1rem 1.25rem 1.1rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; border-top: 1px solid var(--border); }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tech<span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-label">Get In Touch</span>
+    <h1>We'd Love to Hear From You</h1>
+    <p>Have a question, suggestion, or partnership idea? Send us a message and we'll get back to you within 24 hours.</p>
+  </div>
+
+  <section class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          <p>Whether you're a learner with a question, an educator wanting to collaborate, or a company interested in partnerships — we're open to all conversations.</p>
+          <div class="contact-item"><div class="contact-icon">📧</div><div><strong>Email</strong><span>hello@techlearn.africa</span></div></div>
+          <div class="contact-item"><div class="contact-icon">📍</div><div><strong>Location</strong><span>Nairobi, Kenya</span></div></div>
+          <div class="contact-item"><div class="contact-icon">🕐</div><div><strong>Response Time</strong><span>Within 24 hours on weekdays</span></div></div>
+          <div class="contact-item"><div class="contact-icon">💬</div><div><strong>Community</strong><span>Join our Discord for faster peer support</span></div></div>
+          <div style="margin-top:2rem;">
+            <p style="font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:0.75rem;font-family:'Space Grotesk',sans-serif;">Follow Us</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">Twitter</a>
+              <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">LinkedIn</a>
+              <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">YouTube</a>
+              <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;font-size:0.8rem;">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="e.g. Amina" /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="e.g. Wanjiku" /></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="you@example.com" /></div>
+          <div class="form-group"><label>Subject</label>
+            <select id="subject">
+              <option value="">Select a topic...</option>
+              <option>General Enquiry</option>
+              <option>Course Question</option>
+              <option>Technical Support</option>
+              <option>Partnership / Collaboration</option>
+              <option>Report an Issue</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message</label><textarea id="message" placeholder="Tell us what's on your mind..."></textarea></div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="handleSubmit()">Send Message →</button>
+          <p id="form-success" style="display:none;color:var(--accent);font-size:0.875rem;margin-top:1rem;text-align:center;font-weight:600;">✓ Message sent! We'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-subtitle">Quick answers before you reach out.</p>
+      <div style="max-width:700px;">
+        <div class="faq-item"><div class="faq-question">Is TechLearn really free? <span>+</span></div><div class="faq-answer">Yes — all core course content is completely free. No credit card, no hidden fees.</div></div>
+        <div class="faq-item"><div class="faq-question">Do I need a computer to learn? <span>+</span></div><div class="faq-answer">For most courses, yes — a computer is recommended, especially for coding. Some theory content can be accessed on a phone.</div></div>
+        <div class="faq-item"><div class="faq-question">Are the certificates recognised by employers? <span>+</span></div><div class="faq-answer">Our certificates show proof of completion and the skills you've built. Many employers value practical portfolio projects — which you'll build in every course.</div></div>
+        <div class="faq-item"><div class="faq-question">Can I suggest a course topic? <span>+</span></div><div class="faq-answer">Absolutely! Use the contact form above and select "General Enquiry". We actively build new content based on learner demand.</div></div>
+        <div class="faq-item"><div class="faq-question">How do I report a bug or broken content? <span>+</span></div><div class="faq-answer">Use the form above and select "Report an Issue". Please include the course name and what you were trying to do.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo">Tech<span>Learn</span></div><p>A free, structured platform helping African students and professionals break into tech — one skill at a time.</p></div>
+      <div class="footer-col"><h4>Learn</h4><a href="courses.html">All Courses</a><a href="courses.html">Web Development</a><a href="courses.html">Python</a><a href="courses.html">Data Science</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TechLearn. All rights reserved.</span><span>Built with ❤️ for African learners</span></div>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const fname = document.getElementById('fname').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      if (!fname || !email || !message) { alert('Please fill in your name, email, and message.'); return; }
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

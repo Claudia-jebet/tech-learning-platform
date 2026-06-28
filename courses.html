@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses — TechLearn</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .filter-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+    .filter-btn { padding: 0.45rem 1.1rem; border-radius: 100px; border: 1px solid var(--border); background: var(--bg); color: var(--text-muted); font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+    .filter-btn:hover, .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .course-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); transition: all 0.25s; display: flex; flex-direction: column; }
+    .course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+    .course-thumb { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .thumb-blue { background: linear-gradient(135deg, #EEF1FE, #D4DDFC); }
+    .thumb-green { background: linear-gradient(135deg, #E0FAF5, #B2F0E5); }
+    .thumb-orange { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+    .thumb-purple { background: linear-gradient(135deg, #F3E8FF, #E0C3FC); }
+    .thumb-red { background: linear-gradient(135deg, #FEE2E2, #FECACA); }
+    .thumb-teal { background: linear-gradient(135deg, #E0FEFE, #B2EFEF); }
+    .thumb-yellow { background: linear-gradient(135deg, #FFFDE7, #FFF9C4); }
+    .thumb-pink { background: linear-gradient(135deg, #FCE4EC, #F8BBD9); }
+    .thumb-indigo { background: linear-gradient(135deg, #E8EAF6, #C5CAE9); }
+    .course-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .course-body h3 { font-size: 1rem; margin: 0.5rem 0 0.4rem; }
+    .course-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; flex: 1; margin-bottom: 1rem; }
+    .course-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .course-link { display: block; text-align: center; margin: 1rem 1.25rem 1.25rem; padding: 0.6rem; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 600; transition: all 0.2s; }
+    .course-link:hover { background: var(--primary); color: #fff; }
+    .courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 768px) { .courses-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tech<span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-label">All Courses</span>
+    <h1>Find Your Learning Path</h1>
+    <p>Browse 80+ courses across web development, data science, cybersecurity, and more. All free to start.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Web Development</button>
+    <button class="filter-btn">Python</button>
+    <button class="filter-btn">Data Science</button>
+    <button class="filter-btn">Java</button>
+    <button class="filter-btn">Databases</button>
+    <button class="filter-btn">Cybersecurity</button>
+    <button class="filter-btn">Beginner</button>
+    <button class="filter-btn">Intermediate</button>
+  </div>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-thumb thumb-blue">💻</div>
+          <div class="course-body"><span class="badge badge-blue">Beginner</span><h3>Web Development Fundamentals</h3><p>Learn HTML, CSS, and JavaScript from scratch. Build real, responsive websites you can show off.</p><div class="course-meta"><span>⏱ 24 hrs</span><span>👤 3,200</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-green">🐍</div>
+          <div class="course-body"><span class="badge badge-green">Beginner</span><h3>Python for Beginners</h3><p>The most beginner-friendly programming language. Loops, functions, files, and mini-projects included.</p><div class="course-meta"><span>⏱ 18 hrs</span><span>👤 5,100</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-orange">📊</div>
+          <div class="course-body"><span class="badge badge-orange">Intermediate</span><h3>Data Science Essentials</h3><p>Data analysis and visualization using Python, pandas, and matplotlib. Build real datasets projects.</p><div class="course-meta"><span>⏱ 32 hrs</span><span>👤 2,400</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-purple">☕</div>
+          <div class="course-body"><span class="badge badge-blue">Intermediate</span><h3>Java &amp; OOP Concepts</h3><p>Master object-oriented programming with Java — classes, inheritance, polymorphism, interfaces, and more.</p><div class="course-meta"><span>⏱ 28 hrs</span><span>👤 1,800</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-red">🗄️</div>
+          <div class="course-body"><span class="badge badge-orange">Intermediate</span><h3>Databases &amp; SQL</h3><p>Design relational databases, write complex queries, and work with MySQL and PostgreSQL in real projects.</p><div class="course-meta"><span>⏱ 20 hrs</span><span>👤 2,900</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-teal">🔐</div>
+          <div class="course-body"><span class="badge badge-green">Beginner</span><h3>Cybersecurity Basics</h3><p>Understand threats, vulnerabilities, and how to protect systems and data in the modern digital world.</p><div class="course-meta"><span>⏱ 16 hrs</span><span>👤 1,500</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-yellow">⚛️</div>
+          <div class="course-body"><span class="badge badge-orange">Intermediate</span><h3>React JS Fundamentals</h3><p>Build modern, dynamic web apps with React. Components, state, props, hooks, and real project builds.</p><div class="course-meta"><span>⏱ 26 hrs</span><span>👤 2,100</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-pink">🤖</div>
+          <div class="course-body"><span class="badge badge-orange">Intermediate</span><h3>Intro to Machine Learning</h3><p>Supervised learning, classification, regression, and model evaluation using Python and scikit-learn.</p><div class="course-meta"><span>⏱ 30 hrs</span><span>👤 1,200</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-indigo">📱</div>
+          <div class="course-body"><span class="badge badge-blue">Beginner</span><h3>Git &amp; GitHub for Beginners</h3><p>Version control is an essential developer skill. Learn commits, branches, merges, and GitHub workflows.</p><div class="course-meta"><span>⏱ 8 hrs</span><span>👤 4,600</span></div></div>
+          <a href="course-detail.html" class="course-link">Start Course →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo">Tech<span>Learn</span></div><p>A free, structured platform helping African students and professionals break into tech — one skill at a time.</p></div>
+      <div class="footer-col"><h4>Learn</h4><a href="courses.html">All Courses</a><a href="courses.html">Web Development</a><a href="courses.html">Python</a><a href="courses.html">Data Science</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TechLearn. All rights reserved.</span><span>Built with ❤️ for African learners</span></div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

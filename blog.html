@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — TechLearn</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    .blog-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); transition: all 0.25s; display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+    .blog-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+    .thumb-blue { background: linear-gradient(135deg, #EEF1FE, #D4DDFC); }
+    .thumb-green { background: linear-gradient(135deg, #E0FAF5, #B2F0E5); }
+    .thumb-orange { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+    .thumb-purple { background: linear-gradient(135deg, #F3E8FF, #E0C3FC); }
+    .thumb-red { background: linear-gradient(135deg, #FEE2E2, #FECACA); }
+    .thumb-teal { background: linear-gradient(135deg, #E0FEFE, #B2EFEF); }
+    .blog-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-meta { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.6rem; display: flex; gap: 0.75rem; align-items: center; }
+    .blog-body h3 { font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+    .blog-body p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+    .blog-read-more { font-size: 0.85rem; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; transition: gap 0.2s; }
+    .blog-card:hover .blog-read-more { gap: 0.6rem; }
+    .featured-post { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 3rem; }
+    .featured-thumb { background: linear-gradient(135deg, var(--primary-light), var(--accent-light)); display: flex; align-items: center; justify-content: center; font-size: 6rem; min-height: 280px; }
+    .featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .featured-body h2 { font-size: 1.6rem; margin-bottom: 0.75rem; line-height: 1.3; }
+    .featured-body p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .featured-post { grid-template-columns: 1fr; } .featured-thumb { min-height: 160px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tech<span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-label">TechLearn Blog</span>
+    <h1>Insights, Tutorials &amp; Tech News</h1>
+    <p>Written by developers for developers. Practical tips, learning guides, and career advice for the African tech ecosystem.</p>
+  </div>
+
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+      <div class="featured-post">
+        <div class="featured-thumb">🚀</div>
+        <div class="featured-body">
+          <span class="section-label">Featured</span>
+          <h2>How to Land Your First Tech Job in Kenya (2026 Guide)</h2>
+          <p>Breaking into tech in Kenya is more achievable than ever — but the path isn't always obvious. We break down exactly what skills to build, where to apply, and how to stand out.</p>
+          <div class="blog-meta" style="margin-bottom:1rem;"><span>📅 June 15, 2026</span><span>⏱ 8 min read</span><span class="badge badge-blue">Career</span></div>
+          <a href="#" class="btn btn-primary">Read Article →</a>
+        </div>
+      </div>
+
+      <h2 style="font-size:1.5rem;margin-bottom:1.5rem;">Latest Posts</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb thumb-blue">💡</div>
+          <div class="blog-body"><div class="blog-meta"><span>June 10, 2026</span><span class="badge badge-blue">Tutorial</span></div><h3>10 CSS Tricks Every Beginner Should Know</h3><p>These CSS techniques will immediately level up how your websites look and behave — no frameworks needed.</p><a href="#" class="blog-read-more">Read more →</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-green">🐍</div>
+          <div class="blog-body"><div class="blog-meta"><span>June 5, 2026</span><span class="badge badge-green">Python</span></div><h3>Python vs JavaScript: Which Should You Learn First?</h3><p>The classic debate — we break it down by goal, learning style, and what the Kenyan job market actually pays for.</p><a href="#" class="blog-read-more">Read more →</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-purple">🎯</div>
+          <div class="blog-body"><div class="blog-meta"><span>May 28, 2026</span><span class="badge badge-blue">Career</span></div><h3>Building a Portfolio That Gets You Hired</h3><p>Your portfolio is your first impression. Here's what to put in it, what to leave out, and how to present your projects.</p><a href="#" class="blog-read-more">Read more →</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-orange">📊</div>
+          <div class="blog-body"><div class="blog-meta"><span>May 20, 2026</span><span class="badge badge-orange">Data Science</span></div><h3>What Is Data Science and Is It Right for You?</h3><p>Data Science is one of the hottest fields in tech — but it's also one of the most misunderstood. Here's a clear breakdown.</p><a href="#" class="blog-read-more">Read more →</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-teal">🔐</div>
+          <div class="blog-body"><div class="blog-meta"><span>May 12, 2026</span><span class="badge badge-green">Security</span></div><h3>5 Cybersecurity Habits Every Developer Should Have</h3><p>You don't need to be a security expert to write safer code. These five habits will protect your projects and your users.</p><a href="#" class="blog-read-more">Read more →</a></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb thumb-red">⚡</div>
+          <div class="blog-body"><div class="blog-meta"><span>May 5, 2026</span><span class="badge badge-blue">Tools</span></div><h3>Git Basics: A Beginner's Guide to Version Control</h3><p>Every developer needs Git. Learn commits, branches, and pushes — and why version control will save your project.</p><a href="#" class="blog-read-more">Read more →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo">Tech<span>Learn</span></div><p>A free, structured platform helping African students and professionals break into tech — one skill at a time.</p></div>
+      <div class="footer-col"><h4>Learn</h4><a href="courses.html">All Courses</a><a href="courses.html">Web Development</a><a href="courses.html">Python</a><a href="courses.html">Data Science</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 TechLearn. All rights reserved.</span><span>Built with ❤️ for African learners</span></div>
+  </footer>
+
+</body>
+</html>
