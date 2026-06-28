@@ -28,4 +28,11 @@ if (yearEl) {
   const year = new Date().getFullYear();
   yearEl.textContent = `© ${year} TechLearn. All rights reserved.`;
 }
+// Highlight active nav link based on current page
+const currentPage = window.location.pathname.split('/').pop();
+document.querySelectorAll('.nav-links a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
 
